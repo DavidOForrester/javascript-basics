@@ -1,53 +1,48 @@
-//Fundamentals 3
+const container = document.querySelector("#container");
 
-//Question 1
-function add7(number) {
-    return number + 7
-}
+const content = document.createElement("div");
+content.classList.add("content");
+content.textContent = "This is the glorious text-content!";
+container.appendChild(content);
 
-console.log(add7(23))
+// a <p> with red text that says “Hey I’m red!”
+const p = document.createElement("p");
+p.style.color = "red";
+p.classList.add("p");
+p.textContent = "Hey I'm red!";
+container.appendChild(p);
 
-//Question 2
-function multiple(number1, number2) {
-    return number1 * number2
-}
+//an <h3> with blue text that says “I’m a blue h3!”
+const h3 = document.createElement("h3");
+h3.style.color = "blue";
+h3.classList.add("h3");
+h3.textContent = "I’m a blue h3!";
+container.appendChild(h3);
 
-console.log(multiple(5, 2))
+// a <div> with a black border and pink background color
+const div = document.createElement("div");
+div.style.backgroundColor = "pink";
+div.style.borderColor = "black"
+div.classList.add("div");
 
-// Question 3
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-}
+const header = document.createElement("h1");
+header.textContent = "I;m in a div"
 
-console.log(capitalize("tEsTinG"))
+const meToo = document.createElement("p");
+meToo.textContent = "ME TOO!"
 
-// Question 4
-function lastLetter(string) {
-    return string.charAt(string.length - 1)
-}
+div.appendChild(header);
+div.appendChild(meToo);
+container.appendChild(div);
 
-console.log(lastLetter("abcde"))
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
 
-/* Fundamentails 1
-// question 1
-console.log(23 + 97)
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
 
-// Question 2
-console.log(23 + 97 + 34 + 12 + 64 + 53)
-
-// Question 3
-console.log((4 + 6 + 9) / 77)
-
-// Question 4
-let a = 10
-console.log(a)
-console.log(9 * a)
-let b = 7 * a
-console.log(b)
-
-// Question 5
-let max = 57
-let actual = max -13
-let percentage = actual / max
-console.log(percentage)
-*/
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
